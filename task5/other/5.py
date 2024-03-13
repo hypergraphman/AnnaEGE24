@@ -13,6 +13,7 @@ def f(n):
 
 
 s = set()
-for i in range(1000, 10000 + 1):
-    s.add(f(i))
+for i in range(1, 100000 + 1):
+    if 1000 <= f(i) <= 10000:
+        s.add(f(i))
 print(len(s))
