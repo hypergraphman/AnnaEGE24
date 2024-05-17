@@ -1,10 +1,13 @@
-def f(s, e):
+def f(s, e, h):
     if s > e:
         return 0
     if s == e:
-        return 1
-    m = [f(s + 1, e), f(s * 2, e), f(s * 3, e)]
+        if h[-2] == '2' or h[-2] == '3':
+            return 1
+        else:
+            return 0
+    m = [f(s + 1, e, h + '1'), f(s * 2, e, h + '2'), f(s * 3, e, h + '3')]
     return sum(m)
 
 
-print(f(1, 15))
+print(f(1, 15, ''))
